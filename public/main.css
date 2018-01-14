@@ -1,0 +1,84 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: #66b3ff;
+  margin: auto;
+  padding: 0;
+}
+
+.heading {
+  padding-top: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-section {
+  width: 70%;
+  margin: auto;
+}
+
+input[type=text], select {
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  padding: 20px auto 20px;
+  margin: auto;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100px;
+  height: 30px;
+  background-color: #097a11;
+  color: white;
+  font-size: 20px;
+  margin: 20px auto 0px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.going_btn {
+  width: 100px;
+  background-color: #cfd2d6;
+  color: black;
+  padding: 10px 20px;
+  font-size: 20px;
+  display: block;
+  margin: 10px auto 10px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.image-edit {
+  width: 300px;
+  height: 200px;
+}
+
+.location-info {
+  margin: 10px auto 10px auto;
+  display: block;
+  padding-left: 3%;
+  background: blue;
+  width: 80%;
+  height: 330px;
+}
+
+.image-section {
+  display: inline-block;
+  background: green;
+  width: 400px;
+  height: 100%;
+  overflow: auto;
+}
+
+.image-info {
+  display: inline-block;
+  background: red;
+  width: 400px;
+  height: 100%;
+  overflow: auto;
+}
