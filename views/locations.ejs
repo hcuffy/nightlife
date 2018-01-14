@@ -11,34 +11,36 @@
 <body>
   <div>
     <h1 class="heading">Going out Tonight?</h1>
-  <div>
-  <div class="form-section">
-    <h3>Search for bars in your area:</h3>
-    <form action="/search/results/" method="get">
-      <div id="search_form">
-        <input class="search-city" type="text" placeholder=" e.g San Diego" name="place">
-        <button type="submit" id="find_btn">Find</button>
+    <div>
+      <div class="form-section">
+        <h3>Search for bars in your area:</h3>
+        <form action="/search/results/" method="get">
+          <div id="search_form">
+            <input class="search-city" type="text" placeholder=" e.g San Diego" name="place">
+            <button type="submit" id="find_btn">Find</button>
+          </div>
       </div>
-      </div>
-    </form>
-    <% for (var i = 0; i < listOfPlaces.length; i++) { %>
-      <div class="location-info">
-        <div class="image-section">
-          <button class="going_btn" id="<%= listOfPlaces[i].id %>">Going</button>
-          <img class="image-edit" src="<%= listOfPlaces[i].image %>">
-          <h3>Rating: <%= listOfPlaces[i].rating %></h3>
+      </form>
+      <% for (var i = 0; i < listOfPlaces.length; i++) { %>
+        <div class="location-info">
+          <div class="image-section">
+            <button onclick="" class="going_btn" id="<%= listOfPlaces[i].id %>"><%= listOfPlaces[i].numGoing%> Going</button>
+            <img class="image-edit" src="<%= listOfPlaces[i].image %>">
+            <h3>Rating: <%= listOfPlaces[i].rating %></h3>
+          </div>
+          <div class="image-info">
+            <h3> Address: </h3>
+            <h3> <%= listOfPlaces[i].name %> </h3>
+            <h3> <%= listOfPlaces[i].address %> </h3>
+            <h3>Phone: <%= listOfPlaces[i].contact  %> </h3>
+          </div>
         </div>
-        <div class="image-info">
-          <h3> Address: </h3>
-          <h3> <%= listOfPlaces[i].name %> </h3>
-          <h3> <%= listOfPlaces[i].address %> </h3>
-          <h3>Phone: <%= listOfPlaces[i].contact  %> </h3>
-        </div>
-      </div>
-      <%  } %>
+        <%  } %>
 
-  </div>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
 </body>
 
 </html>
