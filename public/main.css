@@ -62,14 +62,13 @@ button[type=submit] {
   margin: 10px auto 10px auto;
   display: block;
   padding-left: 3%;
-  background: blue;
+  background: #b3c2db;
   width: 80%;
   height: 330px;
 }
 
 .image-section {
   display: inline-block;
-  background: green;
   width: 400px;
   height: 100%;
   overflow: auto;
@@ -77,7 +76,6 @@ button[type=submit] {
 
 .image-info {
   display: inline-block;
-  background: red;
   width: 400px;
   height: 100%;
   overflow: auto;
