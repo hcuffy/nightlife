@@ -7,3 +7,5 @@ Registered users can:
  - remove themselves from the going list.
 
 Unregistered users can only search for bars in there area.
+
+Visit: https://spotty-suggestion.glitch.me/ to view the live project.
