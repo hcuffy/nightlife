@@ -5,7 +5,9 @@ const goingSchema = new Schema({
   place: String,
   user: [String],
   attending: Number
-}, {timestamps: true});
+}, {
+  timestamps: true
+});
 
 const ModelClass = mongoose.model('attend', goingSchema);
 module.exports = ModelClass

@@ -3,9 +3,17 @@
 
 <head>
   <title>Places</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link href="/main.css" rel="stylesheet" type="text/css">
 </head>
+
 <nav>
+  <% if(user){ %>
+    <a class="log_btn" href="/users/logout"><span class="glyphicon glyphicon-log-out"></span></a>
+  <% } else if(!user){ %>
+      <a class="log_btn" href="/users/login"><span class="glyphicon glyphicon-log-in"></span></a>
+  <% } %>
 </nav>
 
 <body>
@@ -24,7 +32,12 @@
       <% for (var i = 0; i < listOfPlaces.length; i++) { %>
         <div class="location-info">
           <div class="image-section">
-            <button onclick="" class="going_btn" id="<%= listOfPlaces[i].id %>"><%= listOfPlaces[i].going%> Going</button>
+            <div class="buttonCluster">
+              <% if(user){ %>
+                <button class="going_btn" id="<%= listOfPlaces[i].id %>"><span id="check"><%= listOfPlaces[i].going%></span> Going</button>
+                <button class="notGoing_btn">No Going</button>
+              <% } %>
+            </div>
             <img class="image-edit" src="<%= listOfPlaces[i].image %>">
             <h3>Rating: <%= listOfPlaces[i].rating %></h3>
           </div>
@@ -35,10 +48,8 @@
             <h3>Phone: <%= listOfPlaces[i].contact  %> </h3>
           </div>
         </div>
-        <%  } %>
-
+      <%  } %>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/main.js"></script>
 </body>
