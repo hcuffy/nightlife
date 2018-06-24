@@ -10,12 +10,14 @@ router.get('/login', usersController.getLogin);
 router.get('/logout', usersController.getLogout);
 router.get('/signup', usersController.getSignUpForm);
 router.post('/signup', usersController.createNewUser);
-router.post('/signin', passport.authenticate('local', {
-  successRedirect: '/locations',
-  failureRedirect: '/users/login'
-
-}));
+router.post(
+	'/signin',
+	passport.authenticate('local', {
+		successRedirect: '/locations',
+		failureRedirect: '/users/login'
+	})
+);
 
 router.get('/');
 
-module.exports = router
+module.exports = router;

@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Search</title>
+  <head>
+    <title>Search</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <link href="/main.css" rel="stylesheet" type="text/css">
-</head>
-<nav>
-  <% if(user){ %>
-    <a class="log_btn" href="/users/logout"><span class="glyphicon glyphicon-log-out"></span></a>
-  <% } %>
-      <h1 class="heading">Going out Tonight?</h1>
-</nav>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <nav>
+    <% if(user){ %>
+      <a class="log_btn" href="/users/logout"><span class="glyphicon glyphicon-log-out"></span></a>
+      <% } %>
+        <h1 class="heading">Going out Tonight?</h1>
+  </nav>
 
-<body>
-  <div class="form-section">
-    <form action="/search/results/" method="get">
-      <h3>Search for bars in your area:</h3>
-      <div id="search_form">
-        <input class="search-city" type="text" placeholder="e.g San Diego" name="place">
-        <button type="submit" id="find_btn">Find</button>
-      </div>
-    </form>
-  </div>
-  <% if(!user){ %>
-    <div class="registration">
-      <h2>REGISTER</h2>
-      <a href="/users/signup" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user"></span> Sign up</a>
-
-      <h2>LOGIN</h2>
-      <a href="/users/login" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login </a>
+  <body>
+    <div class="form-section">
+      <form action="/search/results/" method="get">
+        <h3>Search for bars in your area:</h3>
+        <div id="search_form">
+          <input class="search-city" type="text" placeholder="e.g San Diego" name="place">
+          <button type="submit" id="find_btn">Find</button>
+        </div>
+      </form>
     </div>
-  <% } %>
-</body>
+    <% if(!user){ %>
+      <div class="registration">
+        <h2>REGISTER</h2>
+        <a href="/users/signup" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user"></span> Sign up</a>
+
+        <h2>LOGIN</h2>
+        <a href="/users/login" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login </a>
+      </div>
+      <% } %>
+  </body>
 
 </html>

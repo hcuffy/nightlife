@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <link href="/main.css" rel="stylesheet" type="text/css">
-</head>
-<nav>
-</nav>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <nav>
+  </nav>
 
-<body>
-  <div class="form_elements">
-    <form action="/users/signin" method="post">
-      <div id="credentials">
-        <label class="login_label">Enter your username: </label>
-        <input type="text" placeholder="Username" name="username">
-        <label class="login_label">Password</label>
-        <input type="password" placeholder="Password" name="password">
-      </div>
-      <button type="submit">Login</button>
-      <% if (error) { %>
-        <h2 class="loginErrMsg"><%= error %></h2>
-        <% } %>
-    </form>
-  </div>
-  <div class="form_elements">
-    <hr>
-    <p>Don't have an account? <a class="login_text" href="/users/signup">Sign-up</a></p>
-    <p>Return <a class="login_text" href="/">Home</a></p>
-  </div>
-</body>
+  <body>
+    <div class="form_elements">
+      <form action="/users/signin" method="post">
+        <div id="credentials">
+          <label class="login_label">Enter your username: </label>
+          <input type="text" placeholder="Username" name="username">
+          <label class="login_label">Password</label>
+          <input type="password" placeholder="Password" name="password">
+        </div>
+        <button type="submit">Login</button>
+        <% if (error) { %>
+          <h2 class="loginErrMsg"><%= error %></h2>
+          <% } %>
+      </form>
+    </div>
+    <div class="form_elements">
+      <hr>
+      <p>Don't have an account? <a class="login_text" href="/users/signup">Sign-up</a></p>
+      <p>Return <a class="login_text" href="/">Home</a></p>
+    </div>
+  </body>
 
 </html>

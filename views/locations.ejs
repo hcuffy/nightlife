@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Places</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <link href="/main.css" rel="stylesheet" type="text/css">
-</head>
+  <head>
+    <title>Places</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+  </head>
 
-<nav>
-  <% if(user){ %>
-    <a class="log_btn" href="/users/logout"><span class="glyphicon glyphicon-log-out"></span></a>
-  <% } else if(!user){ %>
-      <a class="log_btn" href="/users/login"><span class="glyphicon glyphicon-log-in"></span></a>
-  <% } %>
-</nav>
+  <nav>
+    <% if(user){ %>
+      <a class="log_btn" href="/users/logout"><span class="glyphicon glyphicon-log-out"></span></a>
+      <% } else if(!user){ %>
+        <a class="log_btn" href="/users/login"><span class="glyphicon glyphicon-log-in"></span></a>
+        <% } %>
+  </nav>
 
-<body>
-  <div>
-    <h1 class="heading">Going out Tonight?</h1>
+  <body>
     <div>
-      <div class="form-section">
-        <h3>Search for bars in your area:</h3>
-        <form action="/search/results/" method="get">
-          <div id="search_form">
-            <input class="search-city" type="text" placeholder=" e.g San Diego" name="place">
-            <button type="submit" id="find_btn">Find</button>
-          </div>
-      </div>
-      </form>
-      <% for (var i = 0; i < listOfPlaces.length; i++) { %>
-        <div class="location-info">
-          <div class="image-section">
-            <div class="buttonCluster">
-              <% if(user){ %>
-                <button class="going_btn" id="<%= listOfPlaces[i].id %>"><span id="check"><%= listOfPlaces[i].going%></span> Going</button>
-                <button class="notGoing_btn">No Going</button>
-              <% } %>
+      <h1 class="heading">Going out Tonight?</h1>
+      <div>
+        <div class="form-section">
+          <h3>Search for bars in your area:</h3>
+          <form action="/search/results/" method="get">
+            <div id="search_form">
+              <input class="search-city" type="text" placeholder=" e.g San Diego" name="place">
+              <button type="submit" id="find_btn">Find</button>
             </div>
-            <img class="image-edit" src="<%= listOfPlaces[i].image %>">
-            <h3>Rating: <%= listOfPlaces[i].rating %></h3>
-          </div>
-          <div class="image-info">
-            <h3> Address: </h3>
-            <h3> <%= listOfPlaces[i].name %> </h3>
-            <h3> <%= listOfPlaces[i].address %> </h3>
-            <h3>Phone: <%= listOfPlaces[i].contact  %> </h3>
-          </div>
         </div>
-      <%  } %>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/main.js"></script>
-</body>
+        </form>
+        <% for (var i = 0; i < listOfPlaces.length; i++) { %>
+          <div class="location-info">
+            <div class="image-section">
+              <div class="buttonCluster">
+                <% if(user){ %>
+                  <button class="going_btn" id="<%= listOfPlaces[i].id %>"><span id="check"><%= listOfPlaces[i].going%></span> Going</button>
+                  <button class="notGoing_btn">No Going</button>
+                  <% } %>
+              </div>
+              <img class="image-edit" src="<%= listOfPlaces[i].image %>">
+              <h3>Rating: <%= listOfPlaces[i].rating %></h3>
+            </div>
+            <div class="image-info">
+              <h3> Address: </h3>
+              <h3> <%= listOfPlaces[i].name %> </h3>
+              <h3> <%= listOfPlaces[i].address %> </h3>
+              <h3>Phone: <%= listOfPlaces[i].contact  %> </h3>
+            </div>
+          </div>
+          <%  } %>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="/main.js"></script>
+  </body>
 
 </html>
